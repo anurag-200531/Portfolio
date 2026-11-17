@@ -1,29 +1,32 @@
-/* ═══════════════════════════════════════════════
-   ANURAG KUMAR PORTFOLIO — style.css
-   ═══════════════════════════════════════════════ */
 
-/* ── Variables ── */
 :root {
-  --accent:    #7c3aed;
-  --accent2:   #a78bfa;
-  --accent3:   #c4b5fd;
-  --bg:        #09090b;
-  --bg2:       #111114;
-  --bg3:       #18181b;
-  --bg4:       #27272a;
-  --border:    rgba(124, 58, 237, 0.18);
-  --border2:   rgba(124, 58, 237, 0.35);
-  --text:      #fafafa;
-  --text2:     #a1a1aa;
-  --text3:     #71717a;
-  --card-bg:   #111114;
-  --glow:      rgba(124, 58, 237, 0.25);
+  --accent: #7c3aed;
+  --accent2: #a78bfa;
+  --accent3: #c4b5fd;
+  --bg: #09090b;
+  --bg2: #111114;
+  --bg3: #18181b;
+  --bg4: #27272a;
+  --border: rgba(124, 58, 237, 0.18);
+  --border2: rgba(124, 58, 237, 0.35);
+  --text: #fafafa;
+  --text2: #a1a1aa;
+  --text3: #71717a;
+  --card-bg: #111114;
+  --glow: rgba(124, 58, 237, 0.25);
   --lc-orange: #FFA116;
 }
 
-/* ── Reset ── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   background: var(--bg);
@@ -33,13 +36,13 @@ body {
   min-height: 100vh;
 }
 
-/* ══════════════════════
-   CANVAS BACKGROUNDS
-══════════════════════ */
+/* BACKGROUND CANVASES */
 #bg-canvas {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
 }
@@ -54,9 +57,7 @@ body {
   pointer-events: none;
 }
 
-/* ══════════════════════
-   LAYOUT
-══════════════════════ */
+/* LAYOUT */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -64,9 +65,7 @@ body {
   z-index: 1;
 }
 
-/* ══════════════════════
-   SIDEBAR
-══════════════════════ */
+/* SIDEBAR */
 .sidebar {
   width: 270px;
   min-height: 100vh;
@@ -75,7 +74,8 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border-right: 1px solid var(--border);
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +85,7 @@ body {
   overflow-y: auto;
 }
 
-/* Avatar */
+/* PROFILE PHOTO */
 .avatar-wrap {
   width: 90px;
   height: 90px;
@@ -102,11 +102,9 @@ body {
   border: 2px solid var(--border2);
   position: relative;
   flex-shrink: 0;
-  /* If using a photo, the img inside will use these same dimensions */
   overflow: hidden;
 }
 
-/* If you swap "AK" for <img src="your-photo.jpg"> this handles it */
 .avatar-wrap img {
   width: 100%;
   height: 100%;
@@ -114,7 +112,6 @@ body {
   border-radius: 50%;
 }
 
-/* Spinning ring around avatar */
 .avatar-wrap::after {
   content: '';
   position: absolute;
@@ -127,7 +124,7 @@ body {
 
 @keyframes spin-ring {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
 }
 
 .sidebar-name {
@@ -152,8 +149,10 @@ body {
   margin: 24px 0;
 }
 
-/* Nav */
-.nav-links { width: 100%; }
+/* NAVIGATION */
+.nav-links {
+  width: 100%;
+}
 
 .nav-links a {
   display: flex;
@@ -170,7 +169,11 @@ body {
   position: relative;
 }
 
-.nav-links a i { width: 18px; text-align: center; font-size: 0.95rem; }
+.nav-links a i {
+  width: 18px;
+  text-align: center;
+  font-size: 0.95rem;
+}
 
 .nav-links a:hover,
 .nav-links a.active {
@@ -190,7 +193,7 @@ body {
   border-radius: 0 3px 3px 0;
 }
 
-/* Sidebar footer */
+/* SIDEBAR FOOTER */
 .sidebar-footer {
   margin-top: auto;
   width: 100%;
@@ -235,9 +238,7 @@ body {
   box-shadow: 0 4px 12px var(--glow);
 }
 
-/* ══════════════════════
-   MAIN
-══════════════════════ */
+/* MAIN CONTENT */
 .main {
   margin-left: 270px;
   flex: 1;
@@ -252,9 +253,7 @@ section {
   justify-content: center;
 }
 
-/* ══════════════════════
-   BUTTONS
-══════════════════════ */
+/* BUTTONS */
 .btn-primary {
   padding: 13px 28px;
   background: var(--accent);
@@ -278,8 +277,6 @@ section {
   box-shadow: 0 8px 28px rgba(124, 58, 237, 0.5);
 }
 
-.btn-full { width: 100%; justify-content: center; }
-
 .btn-outline {
   padding: 12px 28px;
   background: transparent;
@@ -302,10 +299,10 @@ section {
   background: rgba(124, 58, 237, 0.06);
 }
 
-/* ══════════════════════
-   HERO
-══════════════════════ */
-.hero { padding-top: 120px; }
+/* HERO */
+.hero {
+  padding-top: 120px;
+}
 
 .hero-eyebrow {
   font-size: 0.8rem;
@@ -333,7 +330,12 @@ section {
 }
 
 .name-gradient {
-  background: linear-gradient(135deg, #fff 0%, var(--accent2) 60%, var(--accent) 100%);
+  background: linear-gradient(
+    135deg,
+    #fff 0%,
+    var(--accent2) 60%,
+    var(--accent) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -367,7 +369,7 @@ section {
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+  50% { opacity: 0; }
 }
 
 .hero-cta {
@@ -384,7 +386,9 @@ section {
   flex-wrap: wrap;
 }
 
-.stat-item { text-align: left; }
+.stat-item {
+  text-align: left;
+}
 
 .stat-num {
   font-size: 2rem;
@@ -406,10 +410,10 @@ section {
   align-self: stretch;
 }
 
-/* ══════════════════════
-   SECTION HEADER
-══════════════════════ */
-.section-header { margin-bottom: 50px; }
+/* SECTION HEADERS */
+.section-header {
+  margin-bottom: 50px;
+}
 
 .section-eyebrow {
   font-size: 0.78rem;
@@ -436,9 +440,7 @@ section {
   line-height: 1.1;
 }
 
-/* ══════════════════════
-   EDUCATION
-══════════════════════ */
+/* EDUCATION */
 .edu-grid {
   display: flex;
   flex-direction: column;
@@ -461,7 +463,8 @@ section {
 .edu-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 3px;
   height: 100%;
   background: linear-gradient(to bottom, var(--accent), transparent);
@@ -475,7 +478,9 @@ section {
   box-shadow: -4px 0 20px var(--glow);
 }
 
-.edu-card:hover::before { opacity: 1; }
+.edu-card:hover::before {
+  opacity: 1;
+}
 
 .edu-icon {
   width: 50px;
@@ -514,9 +519,7 @@ section {
   flex-shrink: 0;
 }
 
-/* ══════════════════════
-   SKILLS
-══════════════════════ */
+/* SKILLS */
 .skills-wrap {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -572,9 +575,7 @@ section {
   color: var(--accent2);
 }
 
-/* ══════════════════════
-   PROJECTS
-══════════════════════ */
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -594,7 +595,6 @@ section {
   overflow: hidden;
 }
 
-/* Glow blob on hover */
 .project-card::after {
   content: '';
   position: absolute;
@@ -603,7 +603,11 @@ section {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.08), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.08),
+    transparent 70%
+  );
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -615,11 +619,8 @@ section {
   box-shadow: 0 12px 40px rgba(124, 58, 237, 0.18);
 }
 
-.project-card:hover::after { opacity: 1; }
-
-.project-card.coming-soon {
-  border-style: dashed;
-  opacity: 0.6;
+.project-card:hover::after {
+  opacity: 1;
 }
 
 .project-icon {
@@ -674,13 +675,17 @@ section {
   margin-top: 4px;
 }
 
-.project-link:hover { gap: 10px; }
+.project-link:hover {
+  gap: 10px;
+}
 
-/* ══════════════════════
-   LEETCODE BADGE CARD
-══════════════════════ */
+/* LEETCODE CARD */
 .leetcode-badge-card {
-  background: linear-gradient(135deg, rgba(255, 161, 22, 0.06), rgba(124, 58, 237, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 161, 22, 0.06),
+    rgba(124, 58, 237, 0.08)
+  );
   border: 1px solid rgba(255, 161, 22, 0.35);
   border-radius: 16px;
   padding: 26px 32px;
@@ -697,10 +702,16 @@ section {
 .leetcode-badge-card::before {
   content: '';
   position: absolute;
-  top: -30px; right: -30px;
-  width: 120px; height: 120px;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 161, 22, 0.1), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 161, 22, 0.1),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -753,7 +764,10 @@ section {
   align-items: center;
 }
 
-.lc-flame { font-size: 1.6rem; line-height: 1; }
+.lc-flame {
+  font-size: 1.6rem;
+  line-height: 1;
+}
 
 .lc-days {
   font-size: 2.2rem;
@@ -780,9 +794,50 @@ section {
   border: 1px solid rgba(255, 161, 22, 0.3);
 }
 
-/* ══════════════════════
-   ACHIEVEMENTS GRID
-══════════════════════ */
+/* CODECHEF */
+.codechef-card {
+  background: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.10),
+    rgba(79, 70, 229, 0.07)
+  );
+  border: 1px solid var(--border2);
+  border-radius: 16px;
+  padding: 26px 30px;
+  margin-bottom: 28px;
+}
+
+.codechef-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.codechef-title {
+  font-size: 1.08rem;
+  font-weight: 750;
+}
+
+.codechef-sub {
+  color: var(--text2);
+  font-size: 0.86rem;
+  margin-top: 5px;
+}
+
+.codechef-link {
+  color: var(--accent2);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.codechef-link:hover {
+  color: var(--text);
+}
+
+/* ACHIEVEMENTS */
 .achieve-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -827,9 +882,12 @@ section {
   margin-top: 4px;
 }
 
-/* ══════════════════════
-   CONTACT
-══════════════════════ */
+.certificate-source-link {
+  display: inline-flex;
+  margin-top: 18px;
+}
+
+/* CONTACT */
 .contact-wrap {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -876,63 +934,19 @@ section {
   color: var(--text3);
 }
 
-.contact-item-val {
+.contact-item a {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
-.contact-form-wrap {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px;
+.contact-item a:hover {
+  color: var(--accent2);
 }
 
-.form-group { margin-bottom: 18px; }
-
-.form-group label {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text3);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 7px;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 12px 16px;
-  color: var(--text);
-  font-family: inherit;
-  font-size: 0.92rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text3);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-/* ══════════════════════
-   MOBILE HAMBURGER
-══════════════════════ */
+/* MOBILE MENU */
 .hamburger {
   display: none;
   position: fixed;
@@ -951,9 +965,7 @@ section {
   font-size: 1.1rem;
 }
 
-/* ══════════════════════
-   SCROLL REVEAL
-══════════════════════ */
+/* SCROLL REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -965,11 +977,24 @@ section {
   transform: none;
 }
 
-/* ══════════════════════
-   RESPONSIVE
-══════════════════════ */
+/* FOOTER */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text3);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.footer p + p {
+  margin-top: 8px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1100px) {
-  .main { padding: 0 40px; }
+  .main {
+    padding: 0 40px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -986,23 +1011,47 @@ section {
     padding: 0 24px;
   }
 
-  .hamburger { display: flex; }
+  .hamburger {
+    display: flex;
+  }
 
-  section { padding: 80px 0; }
+  section {
+    padding: 80px 0;
+  }
 
-  .hero { padding-top: 90px; }
+  .hero {
+    padding-top: 90px;
+  }
 
   .contact-wrap {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  #cube-canvas { display: none; }
+  #cube-canvas {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
-  .hero-stats { gap: 20px; }
-  .stat-num   { font-size: 1.5rem; }
-  .leetcode-badge-card { flex-direction: column; align-items: flex-start; }
-  .lc-right { align-self: flex-end; }
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .stat-num {
+    font-size: 1.5rem;
+  }
+
+  .leetcode-badge-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lc-right {
+    align-self: flex-end;
+  }
+
+  .codechef-card {
+    padding: 22px;
+  }
 }
